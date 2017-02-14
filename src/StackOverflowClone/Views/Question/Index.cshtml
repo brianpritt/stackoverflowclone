@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using StackOverflowClone.Models
+@model List<Question>
+
+<div class="container">
+    <h2>List of Questions</h2>
+    <hr />
+    <p>@Html.ActionLink("Ask a Question", "Create")</p>
+
+    @foreach (Question question in Model)
+    {
+        <div class="card">
+            <div class="card-content">
+                <p class="card-title">@question.Title | asked by: @question.SubmittingUser.UserName</p>
+            </div>
+        </div>
+    }
+</div>

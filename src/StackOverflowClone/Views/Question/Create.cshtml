@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Ask Question";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using StackOverflowClone.Models
+
+@model Question
+
+<div class="container">
+    <h2>Ask a Question!</h2>
+    <hr />
+    @using (Html.BeginForm("Create", "Question", FormMethod.Post))
+    {
+        @Html.LabelFor(m => m.Title)
+        @Html.TextBoxFor(m => m.Title)
+        <br />
+        @Html.LabelFor(m => m.QuestionDetail)
+        @Html.TextAreaFor(m => m.QuestionDetail)
+
+        <input type="submit" value="Ask Question" />
+    }
+</div>
