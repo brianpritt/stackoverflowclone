@@ -8,7 +8,7 @@ using StackOverflowClone.Models;
 namespace StackOverflowClone.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20170214190948_Initial")]
+    [Migration("20170215002054_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -193,6 +193,28 @@ namespace StackOverflowClone.Migrations
                     b.ToTable("Questions");
                 });
 
+            modelBuilder.Entity("StackOverflowClone.Models.Response", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int?>("QuestionId");
+
+                    b.Property<string>("ResponseDetail");
+
+                    b.Property<string>("SubmittingUserId");
+
+                    b.Property<int>("Votes");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("QuestionId");
+
+                    b.HasIndex("SubmittingUserId");
+
+                    b.ToTable("Responses");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRole")
@@ -233,7 +255,18 @@ namespace StackOverflowClone.Migrations
             modelBuilder.Entity("StackOverflowClone.Models.Question", b =>
                 {
                     b.HasOne("StackOverflowClone.Models.ApplicationUser", "SubmittingUser")
-                        .WithMany()
+                        .WithMany("Questions")
+                        .HasForeignKey("SubmittingUserId");
+                });
+
+            modelBuilder.Entity("StackOverflowClone.Models.Response", b =>
+                {
+                    b.HasOne("StackOverflowClone.Models.Question", "Question")
+                        .WithMany("Responses")
+                        .HasForeignKey("QuestionId");
+
+                    b.HasOne("StackOverflowClone.Models.ApplicationUser", "SubmittingUser")
+                        .WithMany("Responses")
                         .HasForeignKey("SubmittingUserId");
                 });
         }

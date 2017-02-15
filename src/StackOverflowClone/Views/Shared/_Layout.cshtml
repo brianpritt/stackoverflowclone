@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using System.Security.Claims
+
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -9,6 +11,23 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
+    <nav>
+        <div class="nav-wrapper">
+            <span class="brand-logo center">@Html.ActionLink("Stack Overflow Clone", "Index", "Question")</span>
+            <ul class="right">
+                <li>@Html.ActionLink("Questions", "Index", "Question")</li>
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li>@Html.ActionLink($"{User.Identity.Name}'s Account", "Index", "Account")</li>
+                }
+                else
+                {
+
+                    <li>@Html.ActionLink("Login", "Index", "Account")</li>
+                }
+            </ul>
+        </div>
+    </nav>
     <div>
         @RenderBody()
     </div>

@@ -14,7 +14,7 @@
     {
         <div class="card">
             <div class="card-content">
-                <p class="card-title">@question.Title | asked by: @question.SubmittingUser.UserName</p>
+                <p class="card-title">@Html.ActionLink(@question.Title, "Details", new { id = question.Id }) | asked by: @question.SubmittingUser.UserName</p>
             </div>
         </div>
     }

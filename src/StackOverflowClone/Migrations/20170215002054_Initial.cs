@@ -170,6 +170,34 @@ namespace StackOverflowClone.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Responses",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    QuestionId = table.Column<int>(nullable: true),
+                    ResponseDetail = table.Column<string>(nullable: true),
+                    SubmittingUserId = table.Column<string>(nullable: true),
+                    Votes = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Responses", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Responses_Questions_QuestionId",
+                        column: x => x.QuestionId,
+                        principalTable: "Questions",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Responses_AspNetUsers_SubmittingUserId",
+                        column: x => x.SubmittingUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "RoleNameIndex",
                 table: "AspNetRoles",
@@ -215,6 +243,16 @@ namespace StackOverflowClone.Migrations
                 name: "IX_Questions_SubmittingUserId",
                 table: "Questions",
                 column: "SubmittingUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Responses_QuestionId",
+                table: "Responses",
+                column: "QuestionId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Responses_SubmittingUserId",
+                table: "Responses",
+                column: "SubmittingUserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -235,10 +273,13 @@ namespace StackOverflowClone.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Questions");
+                name: "Responses");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "Questions");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

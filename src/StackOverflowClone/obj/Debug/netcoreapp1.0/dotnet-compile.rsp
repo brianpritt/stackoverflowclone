@@ -205,11 +205,12 @@ C:\Users\epicodus\Documents\Visual Studio 2015\Projects\StackOverflowClone\src\S
 C:\Users\epicodus\Documents\Visual Studio 2015\Projects\StackOverflowClone\src\StackOverflowClone\Startup.cs
 C:\Users\epicodus\Documents\Visual Studio 2015\Projects\StackOverflowClone\src\StackOverflowClone\Controllers\AccountController.cs
 C:\Users\epicodus\Documents\Visual Studio 2015\Projects\StackOverflowClone\src\StackOverflowClone\Controllers\QuestionController.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\StackOverflowClone\src\StackOverflowClone\Migrations\20170214190948_Initial.cs
-C:\Users\epicodus\Documents\Visual Studio 2015\Projects\StackOverflowClone\src\StackOverflowClone\Migrations\20170214190948_Initial.Designer.cs
+C:\Users\epicodus\Documents\Visual Studio 2015\Projects\StackOverflowClone\src\StackOverflowClone\Migrations\20170215002054_Initial.cs
+C:\Users\epicodus\Documents\Visual Studio 2015\Projects\StackOverflowClone\src\StackOverflowClone\Migrations\20170215002054_Initial.Designer.cs
 C:\Users\epicodus\Documents\Visual Studio 2015\Projects\StackOverflowClone\src\StackOverflowClone\Migrations\ApplicationDbContextModelSnapshot.cs
 C:\Users\epicodus\Documents\Visual Studio 2015\Projects\StackOverflowClone\src\StackOverflowClone\Model\ApplicationDbContext.cs
 C:\Users\epicodus\Documents\Visual Studio 2015\Projects\StackOverflowClone\src\StackOverflowClone\Model\ApplicationUser.cs
 C:\Users\epicodus\Documents\Visual Studio 2015\Projects\StackOverflowClone\src\StackOverflowClone\Model\Question.cs
+C:\Users\epicodus\Documents\Visual Studio 2015\Projects\StackOverflowClone\src\StackOverflowClone\Model\Response.cs
 C:\Users\epicodus\Documents\Visual Studio 2015\Projects\StackOverflowClone\src\StackOverflowClone\ViewModels\LoginViewModel.cs
 C:\Users\epicodus\Documents\Visual Studio 2015\Projects\StackOverflowClone\src\StackOverflowClone\ViewModels\RegisterViewModelcs.cs
